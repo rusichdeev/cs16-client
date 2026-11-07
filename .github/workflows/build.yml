@@ -129,6 +129,8 @@ jobs:
         with:
           fetch-depth: 1
           submodules: recursive
+      - name: Patch main menu
+        run: cp patches/Main.cpp 3rdparty/mainui_cpp/menus/Main.cpp
       - name: Fetch YaPB history
         run: git -C 3rdparty/yapb fetch --unshallow origin
       - name: Setup Visual Studio
