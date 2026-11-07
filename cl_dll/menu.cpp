@@ -333,7 +333,10 @@ void CHudMenu::ShowVGUIMenu( int menuType )
 		szCmd = "exec touch/chooseteam_ct.cfg";
 		break;
 	case MENU_BUY:
-		szCmd = "exec touch/buy.cfg";
+		// single-page CS2-style buy menu, one config per team
+		if( g_PlayerExtraInfo[gHUD.m_Scoreboard.m_iPlayerNum].teamnumber == TEAM_TERRORIST )
+			szCmd = "exec touch/buy_t.cfg";
+		else szCmd = "exec touch/buy_ct.cfg";
 		break;
 	case MENU_BUY_PISTOL:
 		if( g_PlayerExtraInfo[gHUD.m_Scoreboard.m_iPlayerNum].teamnumber == TEAM_TERRORIST )
