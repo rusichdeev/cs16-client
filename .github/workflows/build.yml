@@ -1,6 +1,6 @@
 name: Build and Deploy
-on: [ push, pull_request ]
 
+on: [ push, pull_request, workflow_dispatch ]
 concurrency:
   group: continuous
   cancel-in-progress: true
